@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
-class GCD_FunctionsTest {
+class GCDFunctionsTest {
 
 	@Test
 	void testGcd5() {

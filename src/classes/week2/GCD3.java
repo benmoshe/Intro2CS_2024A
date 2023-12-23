@@ -1,4 +1,4 @@
-package classes.week3;
+package classes.week2;
 /**
  * This GCD example shows the difference between slow GCD to fast GCD (with mod operation).
  * 

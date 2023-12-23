@@ -1,4 +1,4 @@
-package classes.week3;
+package classes.week2;
 
 public class Array_test {
 	public static void main(String[] aa) {

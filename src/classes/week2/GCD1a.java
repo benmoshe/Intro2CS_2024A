@@ -1,4 +1,4 @@
-package classes.week3;
+package classes.week2;
 /**
  * This code example demonstrates a simple GCD (Greater Common Divider) 
  * algorithm - command line argument passing.
