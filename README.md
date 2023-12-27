@@ -7,7 +7,7 @@ Links:
 2. Moodle link (Hebrew, requires authentication): https://moodlearn.ariel.ac.il/course/view.php?id=106350
 3. IDE: https://www.jetbrains.com/idea/
 4. Java version: 17: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
-5. Github (self ref): https://github.com/benmoshe/I2CS_Ariel_2024
+5. Github (self ref): https://github.com/benmoshe/Intro2CS_2024A
 
 Classes:
 
