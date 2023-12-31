@@ -7,7 +7,6 @@ import java.util.Scanner;
  * A simple example of how to read an input from the command line
  * This example was partly taken from: https://alvinalexander.com/java/edu/pj/pj010005/
  * @author boaz.benmoshe
- *
  */
 public class Input {
 
