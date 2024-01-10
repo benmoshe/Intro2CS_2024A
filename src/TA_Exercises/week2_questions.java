@@ -1,5 +1,7 @@
 package TA_Exercises;
+
 import java.util.*;
+
 public class week2_questions {
     public static void main(String[] args) {
         // Exercise 1
@@ -7,34 +9,31 @@ public class week2_questions {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter a natural number that is greater than 0: ");
         int num = sc.nextInt();
-        int sum1 = (num*(1+num))/2; // Sum of Arithmetic Series - סכום סדרה חשבונית
+        int sum1 = (num * (1 + num)) / 2; // Sum of Arithmetic Series - סכום סדרה חשבונית
         System.out.println("This is the sum by Arithmetic Series: " + sum1);
         // Second option
         int sum2 = 0;
-        for (int i = 1; i<= num; ++i){
-            sum2+=i;
+        for (int i = 1; i <= num; ++i) {
+            sum2 += i;
         }
         System.out.println("This is the sum by for loop: " + sum2);
 
         // Exercise 2
         System.out.println("Please enter 4 numbers: ");
         System.out.println("First number: ");
-        int a = sc.nextInt();
+        int first = sc.nextInt();
         System.out.println("Second number: ");
-        int b = sc.nextInt();
+        int second = sc.nextInt();
         System.out.println("Third number: ");
-        int c= sc.nextInt();
+        int third = sc.nextInt();
         System.out.println("Fourth number: ");
-        int d = sc.nextInt();
+        int fourth = sc.nextInt();
 
-        int [] arr = {a, b, c, d};
+        int[] arr = {first, second, third, fourth};
         double sum = 0; // why shouldn't we write: int sum = 0;
-        //for (int k : arr) { // how it's called?    for each? I don't think they learnt it yet.
-        //    sum += k;
-        //}
-        for (int i=0; i<arr.length; i++)
-            sum+=arr[i];
-        double avg = sum/(arr.length);
+        for (int i = 0; i < arr.length; i++)
+            sum += arr[i];
+        double avg = sum / (arr.length);
         System.out.println("The average of the array is" + avg);
 
         // Exercise 3
@@ -45,25 +44,25 @@ public class week2_questions {
             System.out.println();
         }
 
-        //Exercise 4 
+        //Exercise 4
         System.out.println("Please enter a natural number: ");
         int N = sc.nextInt();
         int accumulator = 0;
-        while (N>0){
+        while (N > 0) {
             if (N % 10 == 0)
                 accumulator++;
-            N = N/10;
+            N = N / 10;
         }
-        System.out.println("The ammount of zeroes is: "+accumulator);
+        System.out.println("The amount of zeroes is: " + accumulator);
 
         //Exercise 5
         System.out.println("Please enter two natural numbers, n and m: ");
         int n = sc.nextInt();
         int m = sc.nextInt();
         int power = 1;
-        for (int i=1; i<=n; i++)
-            power*=m;
-        System.out.println("The result of m^n is: "+power);
+        for (int i = 1; i <= n; i++)
+            power *= m;
+        System.out.println("The result of m^n is: " + power);
 
         //Exercise 6
         System.out.println("Please enter three natural numbers, r, t and y: ");
@@ -72,52 +71,52 @@ public class week2_questions {
         int y = sc.nextInt();
         int max = r;
         int min = r;
-        if (max<t) max = t;
-        if (max<y) max = y;
-        if (min>t) min = t;
-        if (min>y) min = y;
-        System.out.println("The largest is "+max+", and the minimal is "+min);
-        
+        if (max < t) max = t;
+        if (max < y) max = y;
+        if (min > t) min = t;
+        if (min > y) min = y;
+        System.out.println("The largest is " + max + ", and the minimal is " + min);
+
         //Exercise 7
         System.out.println("Please enter three natural numbers, a, b and c: ");
         int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
-        double disc = b*b-4*a*c;
-        if (disc<0) System.out.println("No solutions!");
-        else if (disc == 0) System.out.println("The single solution is "+(-b/(2*a)));
+        double disc = b * b - 4 * a * c;
+        if (disc < 0) System.out.println("No solutions!");
+        else if (disc == 0) System.out.println("The single solution is " + (-b / (2 * a)));
         else {
-            double x1 = (-b+Math.sqrt(disc))/(2*a);
-            double x2 = (-b-Math.sqrt(disc))/(2*a);
-            System.out.println("The solutions are "+x1+" and "+x2);
+            double x1 = (-b + Math.sqrt(disc)) / (2 * a);
+            double x2 = (-b - Math.sqrt(disc)) / (2 * a);
+            System.out.println("The solutions are " + x1 + " and " + x2);
         }
 
         //Exercise 8
         System.out.println("Please enter a natural number: ");
-        int n = sc.nextInt();
+        int input = sc.nextInt();
         int atzeret = 1;
-        for (int i=1; i<=n; i++)
-            atzeret*=i;
-        System.out.println("The result of "+n+"! is "+atzeret);
+        for (int i = 1; i <= input; i++)
+            atzeret *= i;
+        System.out.println("The result of " + input + "! is " + atzeret);
 
         //Exercise 9
         System.out.println("Please enter a natural number as the array size: ");
         int len = sc.nextInt();
-        int[] arr = new arr[len];
-        System.out.println("Please enter "+len+" numbers.");
-        max=Integer.MIN_VALUE;
-        for (int i=0; i<len; i++){
-            arr[i] = sc.nextInt();
-            if (arr[i]>max) 
-                max = arr[i];
+        int[] array = new int[len];
+        System.out.println("Please enter " + len + " numbers.");
+        max = Integer.MIN_VALUE;
+        for (int i = 0; i < len; i++) {
+            array[i] = sc.nextInt();
+            if (array[i] > max)
+                max = array[i];
         }
-        System.out.println("The maximal number is: "+max);
+        System.out.println("The maximal number is: " + max);
 
         //Exercise 10
-        System.out.println("Please enter a long enough string.");
-        String base = sc.nextString();
-        String pre = base.substring(2,4);
-        String post = base.substring(9,11);
+        System.out.println("Please enter a long enough string:");
+        String base = sc.next();
+        String pre = base.substring(1, 5);
+        String post = base.substring(8, 12);
         if (pre.equals(post))
             System.out.println("The two substrings are equal");
         else System.out.println("The two substrings aren't equal");
