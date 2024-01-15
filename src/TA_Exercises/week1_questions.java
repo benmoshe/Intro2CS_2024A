@@ -1,4 +1,4 @@
-package TA_Excersises;
+package TA_Exercises;
 
 import classes.week3.MyConsole;
 
@@ -55,7 +55,7 @@ public class week1_questions {
         int bigSeconds = MyConsole.readInt("Enter the seconds num: ");
         int hours = bigSeconds / 3600;
         int minutes = (bigSeconds - (3600*hours) ) / 60;
-        int seconds = (bigSeconds - 3600*hours) ) % 60; 
+        int seconds = (bigSeconds - 3600*hours) % 60;
         System.out.println("The hours is "+hours+" hours, "+minutes+" minutes, and "+seconds+ "seconds");
 
         //8
