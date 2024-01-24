@@ -1,10 +1,11 @@
 /**
  * Author: Avi Rahimov
- *
  * This class contains solutions to various exercises for week 4.
  */
 package TA_Exercises;
 
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -14,11 +15,11 @@ public class week4_questions {
         int n = 5;  // Change this value to test with different inputs
 
         long startTime1 = System.nanoTime();
-        int recursion = recCatalan(n);
+        recCatalan(n);
         long endTime1 = System.nanoTime();
 
         long startTime2 = System.nanoTime();
-        int regular = Catalan(n);
+        Catalan(n);
         long endTime2 = System.nanoTime();
 
         long startTime3 = System.nanoTime();
@@ -56,18 +57,17 @@ public class week4_questions {
      * This function checks if a string is symmetric.
      * @param str The input string.
      */
-    public static void isSymmetric(String str) {
+    public static boolean isSymmetric(String str) {
         int start = 0;
         int end = str.length() - 1;
         while (start < end) {
             if (str.charAt(start) != str.charAt(end)) {
-                System.out.println(false);
-                return;
+                return false;
             }
             start++;
             end--;
         }
-        System.out.println(true);
+        return true;
     }
     /**
      * This function reverses a string.
@@ -86,7 +86,7 @@ public class week4_questions {
      * This function counts the occurrences of the first character in a string.
      * @param str The input string.
      */
-    public static void countFirstChar(String str) {
+    public static int countFirstChar(String str) {
         char firstChar = str.charAt(0);
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -94,15 +94,15 @@ public class week4_questions {
                 count++;
             }
         }
-        System.out.println(count);
+        return count;
     }
     /**
      * This function counts the number of words in a string.
      * @param str The input string.
      */
-    public static void howManyWords(String str) {
+    public static int howManyWords(String str) {
         String[] words = str.split(" ");
-        System.out.println(words.length);
+        return words.length;
     }
     /**
      * This function sorts the characters in a string in ascending order.
@@ -269,6 +269,119 @@ public class week4_questions {
         }
 
         return primes;
+    }
+    @Test
+    public void testIsEqual() {
+        assertTrue(isEqual("hello", "hello"));
+        assertFalse(isEqual("hello", "world"));
+        assertFalse(isEqual("hello", "HELLO"));
+        assertTrue(isEqual("", ""));
+    }
+
+    @Test
+    public void testIsSymmetric() {
+        assertTrue(isSymmetric("radar"));
+        assertFalse(isSymmetric("hello"));
+        assertTrue(isSymmetric("A man a plan a canal Panama"));
+        assertFalse(isSymmetric("A man a plan a canal Panama."));
+    }
+
+    @Test
+    public void testReverse() {
+        assertEquals("olleh", reverse("hello"));
+        assertEquals("dlrow", reverse("world"));
+        assertEquals("", reverse(""));
+        assertEquals("Able was I ere I saw Elba", reverse("ablE was I ere I saw elbA"));
+    }
+
+    @Test
+    public void testCountFirstChar() {
+        assertEquals(1, countFirstChar("hello"));
+        assertEquals(2, countFirstChar("worldwide"));
+        assertEquals(0, countFirstChar("")); // think what should you do to fix this
+        assertEquals(2, countFirstChar("Able was I ere I saw Elba"));
+    }
+
+    @Test
+    public void testHowManyWords() {
+        assertEquals(1, howManyWords("hello"));
+        assertEquals(2, howManyWords("hello world"));
+        assertEquals(0, howManyWords(""));
+        assertEquals(6, howManyWords("Able was I ere I saw Elba"));
+    }
+
+    @Test
+    public void testSort() {
+        assertEquals("ehllo", sort("hello"));
+        assertEquals("dlorw", sort("world"));
+        assertEquals("", sort(""));
+        assertEquals("      AEIIaaabbeeellrssww", sort("Able was I ere I saw Elba"));
+    }
+
+    @Test
+    public void testBiggestDigit() {
+        assertEquals(9, biggestDigit(123456789));
+        assertEquals(5, biggestDigit(54321));
+        assertEquals(0, biggestDigit(0));
+        assertEquals(8, biggestDigit(87654321));
+    }
+
+    @Test
+    public void testAtzeret() {
+        assertEquals(120, atzeret(5));
+        assertEquals(720, atzeret(6));
+        assertEquals(1, atzeret(0));
+        assertEquals(5040, atzeret(7));
+    }
+
+    @Test
+    public void testSum() {
+        assertEquals(15, sum(5));
+        assertEquals(21, sum(6));
+        assertEquals(0, sum(0));
+        assertEquals(28, sum(7));
+    }
+    @Test
+    public void testFib() {
+        assertEquals(1, fib(1));
+        assertEquals(1, fib(2));
+        assertEquals(2, fib(3));
+        assertEquals(3, fib(4));
+        assertEquals(5, fib(5));
+    }
+
+    @Test
+    public void testRecCatalan() {
+        assertEquals(1, recCatalan(0));
+        assertEquals(1, recCatalan(1));
+        assertEquals(2, recCatalan(2));
+        assertEquals(5, recCatalan(3));
+        assertEquals(14, recCatalan(4));
+    }
+
+    @Test
+    public void testCatalan() {
+        assertEquals(1, Catalan(0));
+        assertEquals(1, Catalan(1));
+        assertEquals(2, Catalan(2));
+        assertEquals(5, Catalan(3));
+        assertEquals(14, Catalan(4));
+    }
+
+    @Test
+    public void testBetterCatalan() {
+        assertEquals(1, BetterCatalan(0));
+        assertEquals(1, BetterCatalan(1));
+        assertEquals(2, BetterCatalan(2));
+        assertEquals(5, BetterCatalan(3));
+        assertEquals(14, BetterCatalan(4));
+    }
+
+    @Test
+    public void testPrimes() {
+        assertEquals(Arrays.asList(2, 3, 5, 7), primes(10));
+        assertEquals(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29), primes(30));
+        assertEquals(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97), primes(100));
     }
 }
 
