@@ -1,3 +1,7 @@
+/**
+ * Author: Avi Rahimov
+ * This class contains solutions to various exercises from week 3.
+ */
 package TA_Exercises;
 
 import org.junit.jupiter.api.Assertions;
@@ -5,19 +9,29 @@ import org.junit.jupiter.api.Test;
 
 public class week3_questions {
     public static void main(String[] args) {
-        String[][] arr = {
-                {"Silly", "Mango", "Art"},
-                {"Rabbit", "Tiger"}
-        };
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j].charAt(0));
-            }
+//        String[][] arr = {
+//                {"Silly", "Mango", "Art"},
+//                {"Rabbit", "Tiger"}
+//        };
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = 0; j < arr[i].length; j++) {
+//                System.out.print(arr[i][j].charAt(0));
+//            }
+//        }
+        int[] arr = {100, 200, -50, 30, 2, 10};
+        reverse(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");
         }
-
     }
 
+    /**
+     * This function calculates the sum of all elements in an array.
+     *
+     * @param arr The input array.
+     * @return The sum of all elements in the array.
+     */
     public static int arraySum(int[] arr) {
         int sum = 0;
         for (int num : arr) {
@@ -26,10 +40,21 @@ public class week3_questions {
         return sum;
     }
 
+    /**
+     * This function calculates the mean of all elements in an array.
+     *
+     * @param arr The input array.
+     * @return The mean of all elements in the array.
+     */
     public static double arrayMean(int[] arr) {
-        return (double) arraySum(arr) / (arr.length); // always reuse code if you can
+        return (double) arraySum(arr) / (arr.length);
     }
 
+    /**
+     * This function reverses the order of elements in an array.
+     *
+     * @param arr The input array.
+     */
     public static void reverse(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n / 2; i++) {
@@ -53,6 +78,12 @@ public class week3_questions {
     }
      */
 
+    /**
+     * This function calculates the sum of all elements in a 2D array.
+     *
+     * @param array The input 2D array.
+     * @return The sum of all elements in the 2D array.
+     */
     public static int sum(int[][] array) {
         int total = 0;
         for (int[] row : array) {
@@ -63,6 +94,12 @@ public class week3_questions {
         return total;
     }
 
+    /**
+     * This function transposes a 2D array.
+     *
+     * @param array The input 2D array.
+     * @return The transposed 2D array.
+     */
     public static int[][] transpose(int[][] array) {
         int[][] result = new int[array[0].length][array.length];
         for (int i = 0; i < array.length; i++) {
@@ -73,6 +110,11 @@ public class week3_questions {
         return result;
     }
 
+    /**
+     * This function sorts an array such that all even numbers come before all odd numbers.
+     *
+     * @param arr The input array.
+     */
     public static void evenOddSort(int[] arr) {
         int i = -1;
         for (int j = 0; j < arr.length; j++) {
@@ -85,16 +127,22 @@ public class week3_questions {
         }
     }
 
+    /**
+     * This function tests the arraySum function.
+     */
     @Test
     public void testArraySum() {
         int[] arr = {1, 2, 3, 4, 5};
         int expectedSum = 15;
         int[] arr2 = {-1, 2, -3, 4, -5};
         int expectedSum2 = -3;
-        Assertions.assertEquals(expectedSum2, week3_questions.arraySum(arr2));
-        Assertions.assertEquals(expectedSum, week3_questions.arraySum(arr));
+        Assertions.assertEquals(expectedSum2, arraySum(arr2));
+        Assertions.assertEquals(expectedSum, arraySum(arr));
     }
 
+    /**
+     * This function tests the arrayMean function.
+     */
     @Test
     public void testArrayMean() {
         int[] arr = {1, 2, 3, 4, 5};
@@ -105,6 +153,9 @@ public class week3_questions {
         Assertions.assertEquals(expectedMean, week3_questions.arrayMean(arr), 0.0001);
     }
 
+    /**
+     * This function tests the evenOddSort function.
+     */
     @Test
     public void testEvenOddSort() {
         int[] arr = {1, 2, 3, 4, 5};
