@@ -23,5 +23,7 @@ Class 5a: 2D Arrays: https://docs.google.com/presentation/d/1bcKU1Puh1OOWaESAZ6E
 
 Class 5b: Sorting and Searching: https://docs.google.com/presentation/d/1T4CX3oDuZZO48r1HwGkES83Y7DGKqqkc/
 
-Assignments: Ex0: https://docs.google.com/document/d/1U9C1OMqJlO-B89AGmawHjuDAdwhEx_HK/
+Assignments: 
+Ex0: https://docs.google.com/document/d/1U9C1OMqJlO-B89AGmawHjuDAdwhEx_HK/
+Ex1: https://drive.google.com/file/d/1C1BZmi_Qv6oRrL4T5oN9N2bBMFOHPzSI/view
 
