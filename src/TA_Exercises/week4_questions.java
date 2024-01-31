@@ -6,6 +6,7 @@ package TA_Exercises;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -79,7 +80,6 @@ public class week4_questions {
         for (int i = str.length() - 1; i >= 0; i--) {
             reversed += str.charAt(i);
         }
-        System.out.println(reversed);
         return reversed;
     }
     /**
@@ -87,6 +87,8 @@ public class week4_questions {
      * @param str The input string.
      */
     public static int countFirstChar(String str) {
+        if (str.isEmpty())
+            return 0;
         char firstChar = str.charAt(0);
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -101,6 +103,8 @@ public class week4_questions {
      * @param str The input string.
      */
     public static int howManyWords(String str) {
+        if (str.isEmpty())
+            return 0;
         String[] words = str.split(" ");
         return words.length;
     }
@@ -152,9 +156,9 @@ public class week4_questions {
     public static int atzeret(int n) {
         if (n == 0) {
             return 1;
-        } else {
-            return n * atzeret(n - 1);
         }
+        return n * atzeret(n - 1);
+
     }
     /**
      * This function calculates the sum of all numbers from 1 to n.
@@ -282,7 +286,8 @@ public class week4_questions {
     public void testIsSymmetric() {
         assertTrue(isSymmetric("radar"));
         assertFalse(isSymmetric("hello"));
-        assertTrue(isSymmetric("A man a plan a canal Panama"));
+        assertTrue(isSymmetric("helloolleh"));
+        assertFalse(isSymmetric("A man a plan a canal Panama"));
         assertFalse(isSymmetric("A man a plan a canal Panama."));
     }
 
@@ -299,7 +304,8 @@ public class week4_questions {
         assertEquals(1, countFirstChar("hello"));
         assertEquals(2, countFirstChar("worldwide"));
         assertEquals(0, countFirstChar("")); // think what should you do to fix this
-        assertEquals(2, countFirstChar("Able was I ere I saw Elba"));
+        assertEquals(1, countFirstChar("Able was I ere I saw Elba"));
+        assertEquals(4, countFirstChar("able was I ere I saw Elba"));
     }
 
     @Test
@@ -307,7 +313,7 @@ public class week4_questions {
         assertEquals(1, howManyWords("hello"));
         assertEquals(2, howManyWords("hello world"));
         assertEquals(0, howManyWords(""));
-        assertEquals(6, howManyWords("Able was I ere I saw Elba"));
+        assertEquals(7, howManyWords("Able was I ere I saw Elba"));
     }
 
     @Test
@@ -382,6 +388,17 @@ public class week4_questions {
         assertEquals(Arrays.asList(2, 3, 5, 7), primes(10));
         assertEquals(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29), primes(30));
         assertEquals(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97), primes(100));
+    }
+
+
+
+
+
+
+    @Test
+    public void check(){
+        assertTrue(isSymmetric("radar"));
+        assertFalse(isSymmetric("2234324"));
     }
 }
 
