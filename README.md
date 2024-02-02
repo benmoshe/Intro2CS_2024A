@@ -29,3 +29,5 @@ Ex0: https://docs.google.com/document/d/1U9C1OMqJlO-B89AGmawHjuDAdwhEx_HK/
 
 Ex1: https://drive.google.com/file/d/1C1BZmi_Qv6oRrL4T5oN9N2bBMFOHPzSI/view
 
+Ex2: https://docs.google.com/document/d/1HiVFpvDje64esdXZRvOx64zd2Ry6vXgj/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
+
