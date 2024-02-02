@@ -39,17 +39,17 @@ public class QuadraticEquation {
 			b = Double.parseDouble(args[0]);
 			c = Double.parseDouble(args[1]);
 		}
-		double disciminant = b*b - 4.0*c;
+		double discriminant = b*b - 4.0*c;
 		System.out.println("x^2 +"+b+"x+"+c+" = 0");
-		if(disciminant>=0) {
-			double d = Math.sqrt(disciminant);
+		if(discriminant>=0) {
+			double d = Math.sqrt(discriminant);
 			double root1 = (-b + d) / 2.0;
 			double root2 = (-b - d) / 2.0;
 			System.out.println("first solution: "+root1);
 			System.out.println("second solution: "+root2);
 		}
 		else {
-			System.out.println("There is no (real) solution, as the disciminant is negative ("+disciminant+")");
+			System.out.println("There is no (real) solution, as the discriminant is negative ("+discriminant+")");
 		}
 	}
 }

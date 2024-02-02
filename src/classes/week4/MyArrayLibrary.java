@@ -33,8 +33,9 @@ public class MyArrayLibrary {
 	
 	public static void printArray(int[] arr){
 		int i;
-		for(i=0; i<arr.length-1; i=i+1)
-			System.out.print(arr[i]+", ");
+		for(i=0; i<arr.length-1; i=i+1) {
+			System.out.print(arr[i] + ", ");
+		}
 		System.out.println(arr[i]);
 	}
 	
@@ -96,9 +97,18 @@ public class MyArrayLibrary {
 		}
 		return ans;
 	}
-	public static int minIndex(int[] arr, int minInd) {
-		int ans = minInd;
-		for(int i=minInd+1;i<arr.length;i=i+1) {
+
+	/**
+	 * Example:
+	 * arr = {4,2,6,1,0,9}
+	 * minInd = 2;
+	 * @param arr
+	 * @param start
+	 * @return
+	 */
+	public static int minIndex(int[] arr, int start) {
+		int ans = start;
+		for(int i=start+1;i<arr.length;i=i+1) {
 			if(arr[i]<arr[ans]) {ans = i;}
 		}
 		return ans;

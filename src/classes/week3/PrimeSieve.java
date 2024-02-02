@@ -3,7 +3,7 @@ package classes.week3;
 public class PrimeSieve{
 	public static void main(String[] args) {
 		int n = MyConsole.readInt("Enter natural number: ");
-		int limit = (int)Math.sqrt(n);
+		double limit = Math.sqrt(n);
 		
         // initially assume all integers are prime
         boolean[] isPrime = new boolean[n+1];

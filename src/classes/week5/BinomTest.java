@@ -46,7 +46,7 @@ binom(30,15)=155117520
 class BinomTest {
 
 	@Test
-	void testBinom() {
+	public void testBinom() {
 		int n = 8, k = 2;
 	//	System.out.println("binomFast("+n+","+k+") = ");
 		int t = Binom.binom_debug(n,k);

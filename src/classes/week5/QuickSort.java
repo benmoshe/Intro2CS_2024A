@@ -1,4 +1,7 @@
 package classes.week5;
+
+import java.util.ArrayList;
+
 /**
  * Java program for implementation of QuickSort 
  * @author Rajat Mishra, from: https://www.geeksforgeeks.org/quick-sort/
@@ -41,7 +44,8 @@ class QuickSort
  low  --> Starting index, 
  high  --> Ending index */
 public static void sort(double arr[]) {
-	quickSort(arr, 0, arr.length-1);
+
+    quickSort(arr, 0, arr.length-1);
 }
 
  /* The main function that implements QuickSort() 
@@ -64,7 +68,7 @@ public static void sort(double arr[]) {
 
  /* A utility function to print array of size n */
  public static void printArray(double arr[]) 
- { 
+ {
      int n = arr.length; 
      for (int i=0; i<n; ++i) 
          System.out.print(arr[i]+" "); 

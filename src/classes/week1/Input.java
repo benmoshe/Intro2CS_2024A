@@ -1,6 +1,4 @@
 package classes.week1;
-
-
 import java.util.Scanner;
 
 /**
@@ -13,7 +11,7 @@ public class Input {
 	public static void main(String[] args) {
 		// create a scanner so we can read the command-line input
 		Scanner sc = new Scanner(System.in);
-
+int i=3;
 		// prompt for the user's name.
 		System.out.print("Enter your name: ");
 
@@ -24,8 +22,8 @@ public class Input {
 		System.out.print("Enter your age: ");
 
 		// get a command line input as an integer.
-		String age_str = sc.next();
-		int age = Integer.parseInt(age_str); 
+		int age = sc.nextInt();
+		//int age = Integer.parseInt(age_str);
 
 		System.out.println(String.format("%s, your age is %d", username, age));
 		System.out.print("Enter double: ");

@@ -8,9 +8,11 @@ public class Test_101 {
 	public static void main(String[] args) {
 		double i = 3;
 		i = i *5.3;
-		System.out.println("Hello World!");
+		System.out.print("Hello World!");
+	//	System.out.println();
 		String msg = "this is a nice String ";
-		System.out.println(msg + i);
+		int d = 4;
+		System.out.println(msg + d);
 	}
 
 }

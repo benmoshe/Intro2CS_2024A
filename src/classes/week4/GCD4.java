@@ -9,14 +9,14 @@ package classes.week4;
 import java.util.Scanner;
 
 public class GCD4 {
-	static boolean debug_flag = false;
+	public static boolean debug_flag = false;
 	public static void main(String[] args) {
 		// create a scanner so we can read the command-line input
 		Scanner scanner = new Scanner(System.in);
-		int flag = 1;
+		int flag = 4;
 
 		String s = "abc";
-		while(flag == 1 || flag ==2) {
+		while(flag >= 1 && flag <=4) {
 			System.out.print("Enter in integer x=");
 			int x = scanner.nextInt();
 			System.out.print("Enter in integer y=");
@@ -27,6 +27,12 @@ public class GCD4 {
 			}
 			if(flag==2) {
 				g=gcd2(x,y);
+			}
+			if(flag==3) {
+				g=gcd3(x,y);
+			}
+			if(flag==4) {
+				g=gcd4(x,y);
 			}
 			System.out.println(g);
 			System.out.print("Enter 1 for slow GCD, 2 for fast GCD or 0 to exit:");
@@ -43,7 +49,7 @@ public class GCD4 {
 	public static long gcd1(long x, long y) {
 		if(x<y) {	long t=x; x=y; y=t;}
 		long ans=1, n=2;
-		while(x>=n && y>=n) {
+		while(y>=n) {
 			if (x % n == 0 && y % n == 0) {
 				ans = n;
 				if (debug_flag) {

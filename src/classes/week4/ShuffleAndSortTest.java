@@ -29,7 +29,7 @@ class ShuffleAndSortTest {
 	public static double EPS = 0.1;  // 10%
 	@Test
 	void testShuffle() {
-		int size = 10, norm=1000;
+		int size = 10, norm=10000;
 		int iter = size*norm;
 		double[][] test2D = new double[size][size];
 		for(int i=0;i<iter;i++) {
