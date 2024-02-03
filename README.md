@@ -23,6 +23,13 @@ Class 5a: 2D Arrays: https://docs.google.com/presentation/d/1bcKU1Puh1OOWaESAZ6E
 
 Class 5b: Sorting and Searching: https://docs.google.com/presentation/d/1T4CX3oDuZZO48r1HwGkES83Y7DGKqqkc/
 
+Class 6: Intro to OOP: https://docs.google.com/presentation/d/10SVM6RtvpKhahSU3p3Xq8lOpGUZEfr6W/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
+
+Class 7: OOP: collections: https://docs.google.com/presentation/d/1o-ng4-zNNAAiVROylgSxWMTAZ5WKCkUY/edit?usp=sharing&rtpof=true&sd=true
+
+Class 8: Interfaces, Text files & Exceptions: https://docs.google.com/presentation/d/1xt_oeEb-sxf9Um_HnW7-hvP8rOMWD8bz/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
+
+
 Assignments: 
 
 Ex0: https://docs.google.com/document/d/1U9C1OMqJlO-B89AGmawHjuDAdwhEx_HK/
