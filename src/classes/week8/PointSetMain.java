@@ -1,6 +1,6 @@
 package classes.week8;
 
-import classes.week7.Point2D;
+import classes.week6.Point2D;
 
 import java.util.ArrayList;
 /**

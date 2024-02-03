@@ -1,9 +1,9 @@
 package classes.week8;
 
-import classes.week7.Point2D;
-import classes.week8.Circle2D;
-import classes.week8.Rect2D;
-import classes.week8.ShapeComp;
+import classes.week6.Point2D;
+import classes.week7.Circle2D;
+import classes.week7.Rect2D;
+import classes.week7.ShapeComp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,6 @@
 package classes.week8;
 
-import classes.week8.GeoShape;
+import classes.week7.GeoShape;
 
 import java.util.ArrayList;
 
