@@ -33,6 +33,7 @@ public class Class {
         student2.displayInfo();
         Class class1 = new Class(student2);
         class1.changeStudentGrade(100);
+        student2.displayInfo();
         System.out.println("Number of students: " + Student.getNumOfStudents());
     }
 }
