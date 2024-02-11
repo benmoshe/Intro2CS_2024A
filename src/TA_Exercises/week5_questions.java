@@ -84,7 +84,7 @@ public class week5_questions {
     public static int[] mergeArrays(int[] arr1, int[] arr2) {
         int[] merged = new int[arr1.length + arr2.length];
         int i = 0, j = 0, k = 0;
-        // run on the two arrays
+        // run on the two arrays(stop when the small one reached to the end)
         while (i < arr1.length && j < arr2.length) {
             if (arr1[i] <= arr2[j]) {
                 merged[k] = arr1[i]; //this line and the one below can be replaced by this: merged[k++] = arr1[i++];
