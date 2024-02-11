@@ -84,16 +84,17 @@ public class Point_2D {
 		this._x += vec.x();
 		this._y += vec.y();
 	}
-	
-	/////////////////////// You should implement the methods below ///////////////////////////
-	public void scale(Point_2D cen, double ratio) {
+
+    /////////////////////// You can use the methods below in order to implement the other GeoShapes ////////////////////
+    // Make sure to understand and test the methods below!
+
+    public void scale(Point_2D cen, double ratio) {
 		double dx = x()-cen.x();
 		double dy = y()-cen.y();
 		dx *= ratio;
 		dy *= ratio;
 		_x = dx+cen.x();
 		_y = dy+cen.y();
-		/////////////////////////////////////
 	}
 	public void rotate(Point_2D cen, double angleDegrees) {
 		double angRad = Math.toRadians(angleDegrees);
