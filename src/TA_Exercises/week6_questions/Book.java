@@ -70,6 +70,7 @@ public class Book {
         Book book1 = new Book("Harry Potter", "J.K Rowling", 361, 75);
         book1.setPrice(100);
         book1.addOnePage();
+        System.out.println("Price: " + book1.getPrice());
         System.out.println("Title: " + book1.getTitle());
         System.out.println("Author: " + book1.getAuthor());
     }

@@ -1,9 +1,8 @@
 /**
  * Author: Avi Rahimov. Week 7 changes - Doron Mor
- * This class contains solutions to various exercises from week 6, with extention from week 7.
+ * This class contains solutions to various exercises from week 6, with extension from week 7.
  */
-package TA_Exercises.week6_questions;
-
+package TA_Exercises.week7;
 /**
  * This class represents a fraction with a nominator and a denominator.
  */
@@ -26,6 +25,9 @@ public class Fraction {
      * @param denominator The denominator of the fraction.
      */
     public Fraction(int nominator, int denominator) {
+        if (denominator == 0){
+            throw new RuntimeException("The denominator can't be zero");
+        }
         this._nominator = nominator;
         this._denominator = denominator;
         simplify(); // to simplify the fraction to the base fraction as required
@@ -58,12 +60,14 @@ public class Fraction {
     /**
      * Simplifies the fraction by dividing the nominator and denominator by their gcd.
      */
-    private void simplify() {
+    private void simplify() throws RuntimeException{
         int gcd = gcd(_nominator, _denominator);
-        try{ if gcd!=1 {MyException me = new MyException(); throws me}
-        catch(MyException e){System.out.println(e)'}
         _nominator /= gcd;
         _denominator /= gcd;
+        gcd = gcd(_nominator, _denominator);
+        if (gcd != 1){
+            throw new RuntimeException("Should be minimized");
+        }
     }
 
     /**
@@ -114,14 +118,8 @@ public class Fraction {
         return new Fraction(nominator, denominator);
     }
 
-
     @Override
     public String toString() {
         return _nominator + "/" + _denominator;
     }
-}
-class MyException extends RunTimeException {
-  public toString(){
-      return "Should be minimized";
-}
 }

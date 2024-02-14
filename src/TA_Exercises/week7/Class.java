@@ -4,8 +4,10 @@
  */
 package TA_Exercises.week7;
 
+import TA_Exercises.week6_questions.Student;
+
 public class Class {
-    private Student[] learning;
+    private Student[] learning = new Student[3];
 
     /**
      * Constructs a new Class with three students.
@@ -13,10 +15,11 @@ public class Class {
      * @param student1,student2,student3 The students in the class.
      */
     public Class(Student student1, Student student2, Student student3) {
+        // shallow copy
         learning[0] = student1;
         learning[1] = student2;
         learning[2] = student3;
-    } //notice we didn't created copy of the students. This is only a pointer to the original student.
+    } //notice we didn't create copy of the students. This is only a pointer to the original student.
 
     /**
      * Changes the grade of the student in the class.
@@ -26,7 +29,7 @@ public class Class {
      */
     public void changeStudentGrade(int grade, String name) {
         for (int i=0; i<learning.length; i++)
-            if (learning[i].name.equals(name))
+            if (learning[i].getName().equals(name))
                 learning[i].setMolecularBiologyGrade(grade);
     }
 
@@ -39,7 +42,7 @@ public class Class {
         student2.displayInfo();
         student3.displayInfo();
         Class class1 = new Class(student1, student2, student3);
-        class1.changeStudentGrade(100,"student 2");
+        class1.changeStudentGrade(100,"Student 2");
         student2.displayInfo();
         System.out.println("Number of students: " + Student.getNumOfStudents());
     }
