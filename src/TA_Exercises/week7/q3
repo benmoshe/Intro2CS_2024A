@@ -16,7 +16,7 @@ public class Class {
         learning[0] = student1;
         learning[1] = student2;
         learning[2] = student3;
-    }
+    } //notice we didn't created copy of the students. This is only a pointer to the original student.
 
     /**
      * Changes the grade of the student in the class.
@@ -34,10 +34,12 @@ public class Class {
         System.out.println("Number of students: " + Student.getNumOfStudents());
         Student student1 = new Student("Address 1", 85, "Student 1");
         Student student2 = new Student("Address 2", 90, "Student 2");
+        Student student3 = new Student("Address 3", 74, "Student 3");
         student1.displayInfo();
         student2.displayInfo();
-        Class class1 = new Class(student2);
-        class1.changeStudentGrade(100);
+        student3.displayInfo();
+        Class class1 = new Class(student1, student2, student3);
+        class1.changeStudentGrade(100,"student 2");
         student2.displayInfo();
         System.out.println("Number of students: " + Student.getNumOfStudents());
     }
