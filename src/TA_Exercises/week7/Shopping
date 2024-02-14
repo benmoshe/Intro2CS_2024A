@@ -1,0 +1,56 @@
+class Shopping {
+    private String dateOfShopping;
+    private double price;
+    private int howLongItTool;
+    private String shopName;
+
+    public String getDateOfShopping(){
+        return dateOfShopping;
+    }
+    public void setDateOfShopping(String date){
+        dateOfShopping=date;
+    }
+    public double getPrice(){
+        return price;
+    }
+    public void setPrice(double pr){
+        price=pr;
+    }
+    public int getHowLongItTool(){
+        return howLongItTook;
+    }
+    public void setHowLongItTook(int time){
+        howLongItToll=time;
+    }
+    public String getShopName(){
+        return shopName;
+    }
+    public void setShopName(String name){
+        shopName=name;
+    }
+    public void discount(int percent){
+        double old = getPrice();
+        setPrice((old*percent)/100);
+    }
+    public String display(){
+        return ("the date is: "+dateOfShopping+". the price is: "+price.toString()+". the shop name is: "+shopName);
+    }
+    public Shopping(String date, double pr, int time, String name){
+        try{
+            if (date.charAt(2)!='/' || date.charAt(5)!='/' || date.substring(6,9).toInt()<2022)
+            {  MyException me = new MyException();
+               throws me; }
+            else{
+                setDateOfShopping(date); 
+                setPrice(pr); 
+                setHowLongItTook(time);
+                setShopName(name);
+            }
+        catch(MyException e) {System.out.println(e);}
+        }
+    }
+class MyException extends RunTimeException {
+    public toString(){
+        return "Date in wrong format, or year is too old";
+    }
+}
