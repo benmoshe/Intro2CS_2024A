@@ -1,0 +1,44 @@
+/**
+ * Author: Avi Rahimov. week 7 update - Doron
+ * This class contains solutions to various exercises from week 6. extention on week 7.
+ */
+package TA_Exercises.week7;
+
+public class Class {
+    private Student[] learning;
+
+    /**
+     * Constructs a new Class with three students.
+     *
+     * @param student1,student2,student3 The students in the class.
+     */
+    public Class(Student student1, Student student2, Student student3) {
+        learning[0] = student1;
+        learning[1] = student2;
+        learning[2] = student3;
+    }
+
+    /**
+     * Changes the grade of the student in the class.
+     *
+     * @param grade The new grade.
+     * @param name The name of student
+     */
+    public void changeStudentGrade(int grade, String name) {
+        for (int i=0; i<learning.length; i++)
+            if (learning[i].name.equals(name))
+                learning[i].setMolecularBiologyGrade(grade);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Number of students: " + Student.getNumOfStudents());
+        Student student1 = new Student("Address 1", 85, "Student 1");
+        Student student2 = new Student("Address 2", 90, "Student 2");
+        student1.displayInfo();
+        student2.displayInfo();
+        Class class1 = new Class(student2);
+        class1.changeStudentGrade(100);
+        student2.displayInfo();
+        System.out.println("Number of students: " + Student.getNumOfStudents());
+    }
+}
