@@ -56,5 +56,5 @@ public class Student {
     public int getMolecularBiologyGrade() {
         return this.MolecularBiologyGrade;
     }
-
+    public String getName(){return name;}
 }

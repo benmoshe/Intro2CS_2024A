@@ -1,8 +1,8 @@
 /**
- * Author: Avi Rahimov
- * This class contains solutions to various exercises from week 6.
+ * Author: Avi Rahimov. Week 7 update - Doron Mor
+ * This class contains solutions to various exercises from week 6, extention on week 7
  */
-package TA_Exercises.week6_questions;
+package TA_Exercises.week7;
 
 /**
  * This class represents a book with a title, author, number of pages, and price.
@@ -21,11 +21,15 @@ public class Book {
      * @param numOfPages The number of pages in the book.
      * @param price      The price of the book.
      */
-    public Book(String title, String author, int numOfPages, int price) {
+    public Book(String title, String author, int numOfPages, int price) throws RuntimeException {
         this.title = title;
         this.author = author;
         this.numOfPages = numOfPages;
         this.price = price;
+
+        if (price<10 || 300<price) {
+            throw new RuntimeException("The price isn't realistic! Book not initialized");
+        }
     }
 
     /**
@@ -70,9 +74,7 @@ public class Book {
         Book book1 = new Book("Harry Potter", "J.K Rowling", 361, 75);
         book1.setPrice(100);
         book1.addOnePage();
-        System.out.println("Price: " + book1.getPrice());
         System.out.println("Title: " + book1.getTitle());
         System.out.println("Author: " + book1.getAuthor());
     }
 }
-
