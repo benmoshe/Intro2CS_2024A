@@ -6,7 +6,6 @@ import classes.week7.Rect2D;
 import classes.week7.ShapeComp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.fail;
 
 class ShapeContainer2Test {

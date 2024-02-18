@@ -1,14 +1,11 @@
 package classes.week8;
-
 import classes.week7.GeoShape;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class ShapeContainer {
 	private ArrayList<GeoShape> _shapes;
-	
 	public ShapeContainer() {
 		_shapes = new ArrayList<GeoShape>();
 	}
