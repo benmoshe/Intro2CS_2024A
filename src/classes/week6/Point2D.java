@@ -23,7 +23,8 @@ public class Point2D {
      * @param b - second parameter (y)
      */
     public Point2D(double a,double b) {
-    	_x=a; _y=b;
+    	_x=a;
+        _y=b;
     }
     /**
      * Copy Constructor  
@@ -67,6 +68,10 @@ public class Point2D {
     	_y += p.y();
     }
 @Override
+/**
+ * Point2D p1 = new Point2D(1,2);
+ * S.O.P( p1) --> "1,2"
+ */
     public String toString()
     {
         return _x+","+_y;
