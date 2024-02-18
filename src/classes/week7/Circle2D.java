@@ -8,7 +8,7 @@ public class Circle2D implements GeoShape{
 	private static int _counter =0;
 	
 	public Circle2D(Point2D c, double r) {
-		center = new Point2D(c);
+		this.center = new Point2D(c);
 		this._rad = r;
 		_counter++;
 	}
@@ -37,9 +37,9 @@ public class Circle2D implements GeoShape{
 	 * double r = Math.random(); [0,1);
 	 */
 	public String toString() {
-		String ans = this.getClass().getSimpleName()+": " + center.toString()+","+this.getRad();
+		String ans = center.toString()+","+this.getRad();
 		return ans;
-	}public String toStringNeto() {
+	}public String toStringLong() {
 		String ans = this.getClass().getSimpleName()+", " + center.toString()+","+this.getRad();
 		return ans;
 	}
@@ -93,5 +93,13 @@ public class Circle2D implements GeoShape{
 	public double area() {
 		return Math.pow(_rad, 2) * Math.PI;
 	}
-	
+	@Override
+	public boolean equals(Object c)
+	{
+		if(c==null || !(c instanceof Circle2D)) {return false;}
+		Circle2D c2 = (Circle2D) c;
+		return this.getRad()==c2._rad &&
+			this.center.equals(c2.getCenter());
+	}
+
 }

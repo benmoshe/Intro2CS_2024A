@@ -1,4 +1,5 @@
 package classes.week7;
+import assignments.ex2.geo.Point_2D;
 import classes.week6.Point2D;
 
 /**
@@ -36,11 +37,31 @@ public class PointContainer {
 			System.err.println("FUYA: null is not a valid entry for the Point Container");
 		}
 	}
-	/**
-	 * additional methods:
-	 * Point removeAt(int i) {...}
-	 * void sort() {...} // according to the distance from (0,0)
-	 */
+	public boolean equals(Object t) {
+		boolean ans = false;
+		if(t!=null && t instanceof PointContainer) {
+			ans = true;
+			PointContainer pc1 = (PointContainer)t;
+			boolean a1 = this.contains(pc1);
+			boolean a2 = pc1.contains(this);
+			ans = a1 && a2;
+		}
+		return ans;
+	}
+	public boolean contains(PointContainer pc) {
+		boolean ans = true;
+		for(int i=0;i<pc.size() && ans;i=i+1) {
+			ans = this.contains(pc.get(i));
+		}
+		return ans;
+	}
+	public boolean contains(Point2D p) {
+		boolean ans = false;
+		for(int i=0;i<this.size() && !ans ;i=i+1) {
+			ans = p.equals(get(i));
+		}
+		return ans;
+	}
 	//////////// Private Methods ////////////
 	private boolean isFull() {
 		return size() == capacity();
