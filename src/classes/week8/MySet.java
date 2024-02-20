@@ -2,7 +2,7 @@ package classes.week8;
 import java.util.ArrayList;
 public class MySet<T> extends ArrayList<T>{
 	public MySet() {
-	//	super();
+		super();
 	}
 	@Override
 	public boolean add(T t) {
