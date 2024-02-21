@@ -1,5 +1,7 @@
 package classes.week8;
 
+import classes.week6.Point2D;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -28,7 +30,7 @@ public class TextFile_101 {
 	public static void main(String[] a)  {
 		String str = "file_123.txt";
 		String data = "This is a multi String file,\n"
-				+ "second line ...\n 3dr... \n \n \n EOF";
+				+ "second line ...\n ";
 		save(str, data);
 		try {
 			load(str);
@@ -43,8 +45,9 @@ public class TextFile_101 {
 		 try {
 		      FileWriter myWriter = new FileWriter(file);
 		      myWriter.write("Text file named: "+file+"\n");
-		      myWriter.write(data+"\n");
-		      myWriter.write("end of file");
+			   myWriter.write(data+"\n");
+			 Point2D p1 = new Point2D(1,2);
+		      myWriter.write("Point "+p1.toString());
 		      myWriter.close();
 		 }
 		 catch(Exception e) {

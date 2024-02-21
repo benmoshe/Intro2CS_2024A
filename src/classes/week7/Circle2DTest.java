@@ -15,7 +15,7 @@ class Circle2DTest {
         for(int i=0;i<s;i++) {
             Circle2D c1 = new Circle2D(Point2D.ORIGIN, rad);
             Circle2D c2 = new Circle2D(c1);
-            Circle2D c3 = new Circle2D(c1.toStringNeto());
+            Circle2D c3 = new Circle2D(c1.toStringLong());
         }
         int z1 = Circle2D.get_counter();
         assertEquals(z0+s*3, z1);
