@@ -12,7 +12,27 @@ public class StdDrawTest {
 		testSimpleGUI();
 		testClip();
 		testDrawGraphs();
-		
+		int[][] mat = {{1,1,1,1,1}, {1,0,1,0,1}, {1,0,0,0,1},  {1,0,1,0,1},  {1,1,1,1,1}, {1,0,1,0,1}};
+		drawMat(mat);
+
+	}
+
+	public static void drawMat(int[][] mat) {
+		StdDraw.setScale(0, 1);
+		StdDraw.clear();
+		for(int y=0;y<mat.length;y++) {
+			for(int x=0;x<mat[0].length;x++) {
+				int v = mat[y][x];
+				if(v==0) {StdDraw.setPenColor(StdDraw.BLACK);}
+				else {StdDraw.setPenColor(StdDraw.BOOK_RED);}
+				double r = 1/15.0;
+				double x1 = 0.1+2.2*r*x;
+				double y1 = 1-(0.1+2.2*r*y);
+				StdDraw.filledSquare(x1,y1,r);
+			}
+		}
+		StdDraw.show();
+		StdDraw.pause(2);
 	}
 	public static void testSimpleGUI() {
 		StdDraw.setScale(-2, +2);
@@ -38,7 +58,7 @@ public class StdDrawTest {
 		  StdDraw.clear();
 	}
 	public static void testClip() {
-		//StdDraw.setScale(-2, +2);
+		StdDraw.setScale(-2, +2);
 		StdDraw.enableDoubleBuffering();
 		for (double t = 0.0; t<2*Math.PI; t += 0.02) {
 			double x = Math.sin(t);
@@ -47,11 +67,11 @@ public class StdDrawTest {
 			StdDraw.setPenColor(StdDraw.RED);
 			StdDraw.filledCircle(x, y, 0.1);
 			StdDraw.setPenColor(StdDraw.BLACK);
-			StdDraw.filledCircle(-x, -y, 0.05);
+			StdDraw.filledRectangle(-x, -y, 0.05, 0.2);
 			StdDraw.setPenColor(StdDraw.CYAN);
 			StdDraw.filledCircle(x*1.2, -y/2, 0.15);
 			StdDraw.show();
-			StdDraw.pause(20);
+			StdDraw.pause(10);
 		}
 	}
 	public static void testDrawGraphs() {
