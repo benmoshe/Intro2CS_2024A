@@ -107,6 +107,20 @@ public class Ex2 implements Ex2_GUI {
             Point_2D m1 = c.get_p2();
             StdDraw_Ex2.line(m0.x(), m0.y(), m1.x(), m1.y());
         }
+        if (gs instanceof Rect_2D) {
+            Rect_2D c = (Rect_2D) gs;
+            Point_2D m0 = c.min();
+            Point_2D m1 = c.max();
+            double dx = m1.x()-m0.x();
+            double dy = m1.y()-m0.y();
+            double x0 = m0.x()+dx/2;
+            double y0 = m0.y()+dy/2;
+            if (isFill) {
+                StdDraw_Ex2.filledRectangle(x0,y0, dx/2,dy/2);}
+            else {
+                StdDraw_Ex2.rectangle(x0,y0, dx / 2, dy / 2);
+            }
+        }
         Point_2D[] ps = null;
         if (gs instanceof Polygon_2D) {
             ps = ((Polygon_2D) gs).getAllPoints();

@@ -24,7 +24,6 @@ public class PointContainer {
 			throw new RuntimeException("ERR: got index of "+i+"  out of range :[0,"+size()+");" );
 			//return null;
 		}
-		
 		return _ps[i];
 	}
 	public void add(Point2D p) {
@@ -73,5 +72,4 @@ public class PointContainer {
 		}
 		_ps = tmp;
 	}
-	
 }

@@ -55,7 +55,7 @@ class BinomTest {
 
 	@Test
 	void testBinomFastIntInt() {
-		int n = 30, k=15;
+		int n = 34, k=17;
 		long start = System.nanoTime();
 		int b1 = Binom.binom(n,k);
 		long end = System.nanoTime();

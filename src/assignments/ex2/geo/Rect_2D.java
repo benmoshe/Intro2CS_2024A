@@ -7,9 +7,11 @@ package assignments.ex2.geo;
  *
  */
 public class Rect_2D implements GeoShape {
+	private Point_2D _min, _max;
 	public Rect_2D(Point_2D p1, Point_2D p2) {
 		////// add your code here //////
-
+		_min = new Point_2D(Math.min(p1.x(), p2.x()), Math.min(p1.y(), p2.y()));
+		_max = new Point_2D(Math.max(p1.x(), p2.x()), Math.max(p1.y(), p2.y()));
 		////////////////////////////////
 	}
 	public Rect_2D(Rect_2D t1) {
@@ -37,10 +39,9 @@ public class Rect_2D implements GeoShape {
 	public void translate(Point_2D vec) {
 
 	}
-
 	@Override
 	public GeoShape copy() {
-		return null;
+		return new Rect_2D(new Point_2D(_min), new Point_2D(_max));
 	}
 
 	@Override
@@ -52,4 +53,6 @@ public class Rect_2D implements GeoShape {
 	public void rotate(Point_2D center, double angleDegrees) {
 
 	}
+	public Point_2D min() {return _min;}
+	public Point_2D max() {return _max;}
 }

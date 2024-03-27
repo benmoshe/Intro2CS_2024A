@@ -1,10 +1,11 @@
-package assignments.ex2.ex2;
+package assignments.ex2.ex2;//package assignments.ex2.sol;
 
-import assignments.ex2.geo.Circle_2D;
-import assignments.ex2.geo.Point_2D;
 import assignments.ex2.gui.Ex2;
 import assignments.ex2.gui.GUIShape;
 import assignments.ex2.gui.GUI_Shape;
+import assignments.ex2.geo.Circle_2D;
+import assignments.ex2.geo.Point_2D;
+import assignments.ex2.geo.Polygon_2D;
 
 import java.awt.*;
 
@@ -28,11 +29,16 @@ public class Ex2_main {
 		Point_2D p2 = new Point_2D(6,8);
 		Circle_2D c1 = new Circle_2D(p1,2);
 		Circle_2D c2 = new Circle_2D(p2,3.4);
+
+		//Rect_2D r1 = new Rect_2D(p1,p2); //
 		GUI_Shape gs1 = new GUIShape(c1, true, Color.black, 1);
 		GUI_Shape gs2 = new GUIShape(c2, true, Color.yellow, 2);
+
 		shapes.add(gs1);
 		shapes.add(gs2);
 		ex2.init(shapes);
+		String s1 = ex2.getInfo();
+		System.err.println(s1);
 		ex2.show();
 	}
 

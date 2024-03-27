@@ -51,8 +51,12 @@ public class ShapeCollection implements GUI_Shape_Collection {
 	@Override
 	public GUI_Shape_Collection copy() {
 		//////////add your code below ///////////
-
-		return null;
+		GUI_Shape_Collection ans = new ShapeCollection();
+		for(int i =0;i<this.size();i=i+1) {
+			GUI_Shape g = this.get(i).copy();
+			ans.add(g);
+		}
+		return ans;
 		//////////////////////////////////////////
 	}
 

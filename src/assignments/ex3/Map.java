@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Map implements Map2D, Serializable{
 	private int[][] _map;
 	private boolean _cyclicFlag = true;
+	public static final int init1 = -1, init2 = -2;
 	
 	/**
 	 * Constructs a w*h 2D raster map with an init value v.
@@ -141,11 +142,36 @@ public class Map implements Map2D, Serializable{
 	public Map2D allDistance(Pixel2D start, int obsColor) {
 		Map2D ans = null;
 		// add you code here
-
+		ans = new Map(this.getMap());
+		ans.init(this.getWidth(), this.getHeight(), init1);
+		if(this.getPixel(start)!=obsColor) {
+			ans.setPixel(start,0);
+			allDistance(ans, 0, obsColor);
+		}
 		////////////////////
 		return ans;
 	}
-
+	private void allDistance(Map2D map, int rad, int obs) {
+		boolean cont = true;
+		while(cont) {
+			cont = false;
+			for(int y=0;y<map.getHeight();y=y+1) {
+				for(int x=0;y<map.getWidth();x=x+1) {
+					if(map.getPixel(x,y)==rad) {
+						Pixel2D up = new Index2D(x,y+1);
+						if(map.isCyclic()) {
+							up = new Index2D(x,(y+1)%map.getHeight() );
+						}
+						if(map.isInside(up) && map.getPixel(up)==init1) {
+							map.setPixel(up, rad+1);
+							cont = true;
+						}
+					}
+				}
+			}
+			rad +=1;
+		}
+	}
 	@Override
 	public int numberOfConnectedComponents(int obsColor) {
 		int ans = -1;

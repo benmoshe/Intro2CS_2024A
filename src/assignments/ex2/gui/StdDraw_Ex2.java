@@ -1757,7 +1757,7 @@ public final class StdDraw_Ex2 implements ActionListener, MouseListener, MouseMo
 		}
 		}*/
 		_ex2.actionPerformed(ev);
-		//Ex3.actionPerformed(ev);
+		//Ex3_GUI_Example.actionPerformed(ev);
 	}
 
 
@@ -1854,7 +1854,7 @@ public final class StdDraw_Ex2 implements ActionListener, MouseListener, MouseMo
 			if(b==3) {
 				_ex2.mouseRightClicked(new Point_2D(mouseX, mouseY));
 			}
-		//	Ex3.mouseClicked(new Point2D(mouseX, mouseY));
+		//	Ex3_GUI_Example.mouseClicked(new Point2D(mouseX, mouseY));
 		
 		}
 		//StdDraw.ellipse(0.3, 0.5, 0.1, 0.2);

@@ -16,8 +16,8 @@ import java.util.ArrayList;
  */
 public class PointSetMain {
 	public static void main(String[] args) {
-		ArrayList<Point2D> ps = new MySet<Point2D>();
-	//	ArrayList<Point2D> ps = new ArrayList<Point2D>();
+		ArrayList<Point2D> ps2 = new MySet<Point2D>();
+		MySet2<Point2D> ps = new MySet2<Point2D>();
 		for(int i=0;i<10;i++) {
 			Point2D p = new Point2D(i,2*i);
 			ps.add(p);

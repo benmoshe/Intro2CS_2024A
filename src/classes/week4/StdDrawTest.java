@@ -9,9 +9,9 @@ package classes.week4;
  */
 public class StdDrawTest {
 	public static void main(String[] a) {
-		testSimpleGUI();
-		testClip();
-		testDrawGraphs();
+	//	testSimpleGUI();
+	//	testClip();
+	//	testDrawGraphs();
 		int[][] mat = {{1,1,1,1,1}, {1,0,1,0,1}, {1,0,0,0,1},  {1,0,1,0,1},  {1,1,1,1,1}, {1,0,1,0,1}};
 		drawMat(mat);
 

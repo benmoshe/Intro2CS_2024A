@@ -11,17 +11,29 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class TextFileTester {
     @Test
     public void testPointContainer() {
         int size = 10;
         PointContainer pc = randomPoints(size);
-        String file = "a1.txt";
+        String file = "a12.txt";
         save(pc, file);
         PointContainer pc2 = load(file);
         assertEquals(pc, pc2);
     }
+    @Test
+    public void testPointContainer8() {
+        int size = 10;
+        PointContainer pc = randomPoints(size);
+        String file = "a1.txt";
+      //  save(pc, file);
+        PointContainer pc2 = load(file);
+        pc2.add(new Point2D(1,3));
+        assertNotEquals(pc, pc2);
+    }
+
     @Test
     public void testPointContainer2() {
         int size = 10;
@@ -36,8 +48,7 @@ public class TextFileTester {
         PointContainer pc2 = null;
         try {
             pc2 = load2(file);
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
@@ -70,21 +81,28 @@ public class TextFileTester {
 
     private static PointContainer load(String file) {
         PointContainer ans = null;
+        File myObj = new File(file);
+        Scanner myReader = null;
         try {
-            File myObj = new File(file);
-            Scanner myReader = new Scanner(myObj);
+            myReader = new Scanner(myObj);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
             int i = 0;
             ans = new PointContainer();
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                Point2D p = new Point2D(data);
-                ans.add(p);
-                i = i + 1;
+                try {
+                    Point2D p = new Point2D(data);
+                    ans.add(p);
+                    i = i + 1;
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             myReader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
         return ans;
     }
 
