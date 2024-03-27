@@ -2,6 +2,7 @@ package assignments.ex3;
 
 import classes.week4.StdDraw;
 
+
 public class Ex3_GUI_Example {
     public static void main(String[] a) {
         int[][] mat = {{1,1,1,1,1}, {1,0,1,0,1}, {1,0,0,0,1},  {1,0,1,0,1},  {1,1,1,1,1}, {1,0,1,0,1}};
